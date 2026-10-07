@@ -13,11 +13,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: sekelan-ideas/Sangam-releases
-          APK_URL: https://temp.4d4f16c61d89ec64e760039c4ec50717.r2.cloudflarestorage.com/936121/github/GITHUB_DOWNLOAD_AN_ARTIFACT/response/ee0113ad23b8a716eca135ddeb155627?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=7685aa30fee07632b83ea58979a398d0%2F20261003%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261003T110229Z&X-Amz-Expires=3600&X-Amz-Signature=e477dc752a342f9ad07fece5f27e2a0662d418cd343d1c39fa6c5b1e07258faf&X-Amz-SignedHeaders=host
+          APK_URL: https://litter.catbox.moe/80gcjo.apk
         run: |
-          curl -sL "$APK_URL" -o apk.zip
-          unzip -o apk.zip
-          sha256sum Sangam-v2.0.1.apk
-          cp Sangam-v2.0.1.apk Sangam.apk
-          gh release upload v2.0.1 Sangam-v2.0.1.apk Sangam.apk --clobber
-          gh release view v2.0.1 --json assets -q '.assets[].name'
+          set -e
+          curl -sL --max-time 240 "$APK_URL" -o Sangam-v2.0.2.apk
+          ls -la Sangam-v2.0.2.apk
+          sha256sum Sangam-v2.0.2.apk
+          cp Sangam-v2.0.2.apk Sangam.apk
+          gh release upload v2.0.2 Sangam-v2.0.2.apk Sangam.apk --clobber
+          gh release view v2.0.2 --json assets -q '.assets[].name'
