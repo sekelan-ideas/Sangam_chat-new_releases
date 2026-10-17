@@ -9,14 +9,16 @@ jobs:
   attach:
     runs-on: ubuntu-latest
     steps:
-      - name: Download and attach APK
+      - name: Download, unzip and attach APK
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: sekelan-ideas/Sangam-releases
-          APK_URL: https://x0.at/Anyw.zip
+          APK_URL: https://x0.at/hqky.zip
         run: |
           set -e
-          curl -sL --max-time 240 "$APK_URL" -o Sangam-v2.2.6.apk
+          curl -sL --max-time 240 "$APK_URL" -o pack.zip
+          ls -la pack.zip
+          unzip -o pack.zip
           ls -la Sangam-v2.2.6.apk
           sha256sum Sangam-v2.2.6.apk
           cp Sangam-v2.2.6.apk Sangam.apk
