@@ -13,11 +13,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: sekelan-ideas/Sangam-releases
-          APK_URL: https://x0.at/vcYt.zip
+          APK_URL: https://x0.at/SL7m.zip
         run: |
           set -e
           curl -sL --max-time 240 "$APK_URL" -o pack.zip
-          ls -la pack.zip
           unzip -o pack.zip
           ls -la Sangam-v2.2.8.apk
           sha256sum Sangam-v2.2.8.apk
