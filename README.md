@@ -1,90 +1,81 @@
-<div align="center">
+# Sangam — Downloads
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/sangam-logo-dark.png">
-  <img src="assets/sangam-logo.png" width="160" alt="Sangam logo">
-</picture>
+**Where friends and family meet.**
 
-# Sangam
-
-**Where friends and family meet**
-
-A private, end-to-end encrypted messenger built for the people you care about.
-
-![Version](https://img.shields.io/badge/version-1.9.1-3CB3D6)
-![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-2E8FAD)
-![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-F88A32)
-![Security](https://img.shields.io/badge/chats-end--to--end%20encrypted-brightgreen)
-
-[Download the latest APK](../../releases/latest)
-
-</div>
+This repository serves the ready-to-install Android builds of **Sangam**, a
+private, end-to-end encrypted messenger built for families and small groups.
+The source code lives in a private repository; this one exists only to
+distribute the app.
 
 ---
 
-## ✨ Features
+## Download
 
-**Messaging**
-- 💬 Text messages with reply, forward and edit-sent-messages
-- 📷 Photos — crop, rotate and filter before sending
-- 🎬 Videos and 🎤 voice notes, played inside the chat
-- 📄 Documents (PDF and other files)
-- 🕰️ Time capsules — messages that unlock at a time you choose
-- ⭐ Starred messages, emoji reactions and in-chat search
+**Always the newest version:**
 
-**Private by default**
-- 🔒 End-to-end encryption on every message (Signal protocol)
-- 🕵️ Privacy controls — turn off read receipts and last seen
-- 🔐 App lock with a password or your fingerprint
-- 💾 Password-encrypted chat backup & restore
+> **[Download Sangam.apk](https://github.com/sekelan-ideas/Sangam-releases/releases/latest/download/Sangam.apk)**
 
-**Nice to use**
-- 🎨 Per-chat themes, media gallery and animated typing dots
-- 📤 Share photos to Sangam straight from the gallery
-- 🔔 Notifications with sound, vibration and per-chat mute
-- ⚡ Chats open instantly and sync fast, even on slow connections
+**A specific version** — choose one on the
+[Releases page](https://github.com/sekelan-ideas/Sangam-releases/releases),
+or link straight to it:
 
-## 🔐 Security
+```
+https://github.com/sekelan-ideas/Sangam-releases/releases/download/v2.7.3/Sangam-v2.7.3.apk
+```
 
-- **Signal protocol** (X3DH + Double Ratchet via libsignal) for every chat.
-  The server stores only ciphertext; private keys never leave the device.
-- Photos, videos, voice notes and documents are encrypted with
-  AES-256-GCM before upload — their keys travel inside the E2EE messages.
-- Signal protocol keys live in Android's Keystore-backed encrypted storage
-  and are never transmitted.
-- Backups are encrypted with a password only you know (PBKDF2 + AES-GCM).
+## Install
 
-## 🛠 Built with
+1. Download the APK on your Android phone.
+2. Open it. Android will ask you to allow installs from this source — allow
+   it for your browser or file manager.
+3. Tap **Install**, then open Sangam.
 
-| Layer | Technology |
-|---|---|
-| App | Kotlin, Jetpack Compose, Material 3 |
-| Crypto | libsignal (Signal protocol), AES-256-GCM |
-| Backend | Supabase (Postgres + Row Level Security, Storage, Edge Functions) |
-| Notifications | Firebase Cloud Messaging |
-| CI/CD | GitHub Actions — builds, signs and publishes every release |
+Requires **Android 8.0 (Oreo) or newer**.
 
-## 📥 Download
+## Updating
 
-Grab the newest APK from the [**Releases**](../../releases) page — no account needed.
+Install the new APK over the old one — every release is signed with the same
+key, so Android updates in place and your chats are kept.
 
-> **Note:** this repository publishes the official Sangam releases. The
-> application source is developed in a private repository.
+## Checking a download
 
-## 📜 Versions
+```bash
+sha256sum Sangam-v2.7.3.apk
+```
 
-See the [Releases](../../releases) page for the full version history —
-currently at **v1.9.1**.
+Each release note lists the expected hash, so you can confirm the file
+arrived intact.
+
+## What's new
+
+### 2.7.3
+- Signing out now wipes the previous account's chats from the phone.
+- Notifications say what actually arrived — photo, video, voice note or text.
+- Password reset links open a "Set a new password" screen.
+
+### 2.7.2
+- Email confirmation and reset links now come back to the app instead of localhost.
+
+### 2.7.1
+- Forgot password, show-password button, and confirm-password on sign-up.
+
+### 2.7.0
+- Linked devices: every phone and tablet on your account is listed.
+
+### 2.6.0
+- View-once "Opened" receipts, server-side clearing of disappearing messages, smoother screen transitions.
+
+### 2.5.0
+- Photos stay in memory so reopening a chat is instant; a per-photo HD option.
+
+Older releases are listed on the [Releases page](https://github.com/sekelan-ideas/Sangam-releases/releases).
+
+## Privacy
+
+Sangam stores **ciphertext only**. Messages, photos, videos and files are
+encrypted on your device before they are uploaded, and keys never leave the
+phone. No phone number is required.
 
 ---
 
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/sangam-logo-dark.png">
-  <img src="assets/sangam-logo.png" width="72" alt="Sangam logo">
-</picture>
-
-**Sangam** · Where friends and family meet
-
-</div>
+*This repository contains build outputs only — no source code.*
